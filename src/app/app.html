@@ -1,0 +1,23 @@
+<header class="entete">
+  <a routerLink="/" class="logo">🎬 Le Grand Cinéma</a>
+  <nav>
+    <a routerLink="/" routerLinkActive="actif" [routerLinkActiveOptions]="{ exact: true }">À l'affiche</a>
+    @if (auth.utilisateur(); as u) {
+      <a routerLink="/mes-reservations" routerLinkActive="actif">Mes réservations</a>
+      @if (auth.estAdmin()) {
+        <a routerLink="/admin" routerLinkActive="actif">Back-office</a>
+      }
+      <span class="utilisateur">{{ u.prenom }}</span>
+      <button class="lien" (click)="auth.deconnecter()">Déconnexion</button>
+    } @else {
+      <a routerLink="/connexion" routerLinkActive="actif">Connexion</a>
+      <a routerLink="/inscription" class="bouton">Créer un compte</a>
+    }
+  </nav>
+</header>
+
+<main class="contenu">
+  <router-outlet />
+</main>
+
+<footer class="pied">© Le Grand Cinéma – Projet de formation</footer>

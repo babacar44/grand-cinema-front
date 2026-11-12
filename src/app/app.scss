@@ -1,0 +1,30 @@
+.entete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: var(--fond-entete);
+  color: #fff;
+
+  a { color: #fff; text-decoration: none; }
+  nav { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+  nav a.actif { border-bottom: 2px solid var(--accent); }
+  .logo { font-weight: 700; font-size: 1.2rem; }
+  .utilisateur { opacity: 0.8; }
+}
+
+.contenu {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  min-height: 70vh;
+}
+
+.pied {
+  text-align: center;
+  padding: 1rem;
+  color: var(--texte-secondaire);
+  font-size: 0.85rem;
+}
